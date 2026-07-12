@@ -87,14 +87,17 @@ export const projects = [
         'REST API',
       ],
   
-      cover: '/projects/foah/cover.webp',
-  
+      cover: "/projects/foah/cover.jpeg",
+
+      video: "/projects/foah/preview.mp4",
+      
       gallery: [
-        '/projects/foah/home.webp',
-        '/projects/foah/menu.webp',
-        '/projects/foah/cart.webp',
-        '/projects/foah/admin.webp',
-        '/projects/foah/orders.webp',
+        "/projects/foah/home.jpeg",
+        "/projects/foah/menu.jpeg",
+        "/projects/foah/cart.jpeg",
+        "/projects/foah/admin.jpeg",
+        "/projects/foah/orders.jpeg",
+        "/projects/foah/mum.jpeg",
       ],
   
       demo: 'https://foah-alkabsah.onrender.com',
@@ -172,7 +175,7 @@ export const projects = [
   
       technologies: ['React', 'TypeScript', 'Node.js'],
   
-      cover: '/projects/quran/cover.webp',
+      cover: "/projects/foah/cover.jpeg",
       gallery: [],
   
       demo: '',

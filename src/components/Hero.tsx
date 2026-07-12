@@ -75,14 +75,15 @@ export default function Hero() {
       <div className="relative min-h-[calc(100vh-24px)] overflow-hidden rounded-2xl bg-black sm:min-h-[calc(100vh-32px)] md:min-h-[calc(100vh-48px)] md:rounded-[2rem]">
         {/* فيديو الخلفية */}
         <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="metadata"
-          src="/hero-bg.mp4"
-          className="absolute inset-0 h-full w-full object-cover brightness-[0.78] contrast-[1.08] saturate-[0.85]"
-        />
+  autoPlay
+  loop
+  muted
+  playsInline
+  preload="auto"
+  className="absolute inset-0 h-full w-full object-cover brightness-[0.78] contrast-[1.08] saturate-[0.85]"
+>
+  <source src="/hero-bg.mp4" type="video/mp4" />
+</video>
 
         {/* طبقات سينمائية */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_65%_25%,rgba(200,255,106,0.09),transparent_28%)]" />
@@ -155,14 +156,14 @@ export default function Hero() {
               }}
               className="will-change-transform"
             >
-              <h1
-                className="text-[20vw] font-medium leading-[0.78] tracking-[-0.075em] text-primary sm:text-[17vw] md:text-[14vw] lg:text-[11vw] xl:text-[10vw]"
-              >
-                <WordsPullUp
-                  text={t.hero.title}
-                  showAsterisk
-                />
-              </h1>
+            <h1
+  className="overflow-visible pb-5 text-[20vw] font-medium leading-[1] tracking-[-0.075em] text-primary sm:text-[17vw] md:text-[14vw] lg:text-[11vw] xl:text-[10vw]"
+>
+  <WordsPullUp
+    text={t.hero.title}
+    showAsterisk
+  />
+</h1>
             </motion.div>
 
             <motion.p
@@ -188,37 +189,42 @@ export default function Hero() {
               }}
               className="mt-7 flex flex-wrap gap-3"
             >
-              <MagneticButton>
-                <a
-                  href="#contact"
-                  className="group inline-flex items-center gap-3 rounded-full bg-accent py-1.5 pl-5 pr-1.5 text-sm font-medium text-black sm:text-base"
-                >
-                  <span>{t.hero.hire}</span>
+             <MagneticButton>
+  <a
+    href="#contact"
+    className={`group inline-flex items-center gap-3 rounded-full border border-primary/25 bg-black/35 py-1.5 text-sm font-medium text-primary backdrop-blur-md transition-colors hover:border-accent hover:text-accent sm:text-base ${
+      lang === 'ar'
+        ? 'pl-3 pr-6'
+        : 'pl-5 pr-1.5'
+    }`}
+  >
+    <span>{t.hero.hire}</span>
 
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-black text-primary">
-                    <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                  </span>
-                </a>
-              </MagneticButton>
+    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-black">
+      <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+    </span>
+  </a>
+</MagneticButton>
 
               <MagneticButton strength={0.16}>
-                <a
-                  href="#projects"
-                  className="group inline-flex items-center gap-2 rounded-full border border-primary/30 bg-black/10 px-5 py-3 text-sm text-primary backdrop-blur-md transition-colors hover:border-accent hover:text-accent sm:text-base"
-                >
-                  {t.hero.projects}
+              <a
+  href="#contact"
+  className={`group flex items-center gap-2 rounded-full bg-primary py-1.5 transition-all hover:gap-3 ${
+    lang === 'ar'
+      ? 'flex-row-reverse pr-5 pl-1.5'
+      : 'pl-5 pr-1.5'
+  }`}
+>
+  <span className="text-black font-medium text-sm sm:text-base">
+    {t.hero.hire}
+  </span>
 
-                  <ArrowRight
-                    className={`h-4 w-4 transition-transform duration-300 ${
-                      isArabic
-                        ? 'rotate-180 group-hover:-translate-x-1'
-                        : 'group-hover:translate-x-1'
-                    }`}
-                  />
-                </a>
+  <span className="bg-black rounded-full w-10 h-10 flex items-center justify-center transition-transform group-hover:scale-110">
+    <ArrowRight className="w-5 h-5" style={{ color: '#E1E0CC' }} />
+  </span>
+</a>
               </MagneticButton>
 
-              <MagneticButton strength={0.12}>
               <MagneticButton strength={0.12}>
   <a
     href="/Fadwa_Alsaif_CV.pdf"
@@ -230,7 +236,7 @@ export default function Hero() {
     {t.hero.cv}
   </a>
 </MagneticButton>
-              </MagneticButton>
+        
             </motion.div>
           </div>
 

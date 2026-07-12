@@ -12,36 +12,51 @@ interface WordsPullUpMultiStyleProps {
   delayStep?: number;
 }
 
-/**
- * نفس فكرة WordsPullUp لكن يدعم عدة مقاطع بأنماط مختلفة داخل نفس العنوان
- * (مثال: جزء عادي + جزء مائل بخط Instrument Serif + جزء عادي مرة أخرى)
- * مع الحفاظ على حركة الدخول المتدرجة لكل كلمة بغض النظر عن المقطع.
- */
 export default function WordsPullUpMultiStyle({
   segments,
   containerClassName = '',
   delayStep = 0.08,
 }: WordsPullUpMultiStyleProps) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const ref = useRef<HTMLSpanElement | null>(null);
+
+  const isInView = useInView(ref, {
+    once: true,
+  });
 
   let wordIndex = 0;
 
   return (
-    <span ref={ref} className={`inline-flex flex-wrap justify-center ${containerClassName}`}>
-      {segments.map((segment, segIdx) => {
+    <span
+      ref={ref}
+      className={`inline-flex flex-wrap justify-center overflow-visible pb-[0.18em] ${containerClassName}`}
+    >
+      {segments.map((segment, segmentIndex) => {
         const words = segment.text.split(' ');
-        return words.map((word, i) => {
+
+        return words.map((word, wordPosition) => {
           const currentIndex = wordIndex++;
+
           return (
             <span
-              key={`${segIdx}-${i}`}
-              className="overflow-hidden inline-block me-[0.25em]"
+              key={`${segmentIndex}-${wordPosition}`}
+              className="inline-block overflow-visible pb-[0.18em] me-[0.25em]"
             >
               <motion.span
-                className={`inline-block ${segment.className || ''}`}
-                initial={{ y: '100%', opacity: 0 }}
-                animate={isInView ? { y: 0, opacity: 1 } : {}}
+                className={`inline-block overflow-visible pb-[0.1em] ${
+                  segment.className || ''
+                }`}
+                initial={{
+                  y: '100%',
+                  opacity: 0,
+                }}
+                animate={
+                  isInView
+                    ? {
+                        y: 0,
+                        opacity: 1,
+                      }
+                    : {}
+                }
                 transition={{
                   duration: 0.6,
                   delay: currentIndex * delayStep,

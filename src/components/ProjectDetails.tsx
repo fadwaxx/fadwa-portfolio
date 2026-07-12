@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import {
@@ -17,6 +17,13 @@ import { useLanguage } from '../LanguageContext';
 export default function ProjectDetails() {
   const { slug } = useParams();
   const { lang } = useLanguage();
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'auto',
+    });
+  }, [slug]);
 
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
@@ -281,7 +288,40 @@ export default function ProjectDetails() {
           </div>
         </div>
       </section>
+{/* فيديو استعراض المشروع */}
+{project.video && (
+  <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 sm:pb-28">
+    <div className="mb-8">
+      <span className="text-[10px] uppercase tracking-[0.24em] text-accent sm:text-xs">
+        {lang === 'ar' ? 'استعراض المشروع' : 'Project Preview'}
+      </span>
 
+      <h2 className="mt-4 text-3xl text-primary sm:text-5xl">
+        {lang === 'ar'
+          ? 'شاهد تجربة الموقع أثناء الاستخدام.'
+          : 'See the website in action.'}
+      </h2>
+    </div>
+
+    <div className="overflow-hidden rounded-[1.75rem] border border-border bg-black">
+      <video
+        key={project.video}
+        controls
+        muted
+        playsInline
+        preload="metadata"
+        poster={project.cover}
+        className="aspect-video w-full bg-black object-contain"
+      >
+        <source src={project.video} type="video/mp4" />
+
+        {lang === 'ar'
+          ? 'متصفحك لا يدعم تشغيل الفيديو.'
+          : 'Your browser does not support video playback.'}
+      </video>
+    </div>
+  </section>
+)}
       {/* معرض الصور */}
       {project.gallery.length > 0 && (
         <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 sm:pb-28">
@@ -326,32 +366,31 @@ export default function ProjectDetails() {
           </div>
         </section>
       )}
-
-   {/* دعوة للتواصل */}
+{/* دعوة للتواصل */}
 <section className="px-4 pb-6 sm:px-6">
-  <div className="mx-auto max-w-7xl rounded-[2rem] border border-accent/20 bg-accent px-6 py-16 text-center text-black sm:px-10 sm:py-24">
-    <span className="text-xs uppercase tracking-[0.22em] text-black/55">
-      {lang === 'ar' ? 'ابدأ مشروعك' : 'Start Your Project'}
+  <div className="mx-auto max-w-7xl rounded-[2rem] border border-border bg-[#101010] px-6 py-16 text-center shadow-soft sm:px-10 sm:py-24">
+    <span className="text-xs uppercase tracking-[0.22em] text-primary/50">
+      {lang === 'ar' ? 'هل لديك فكرة مشروع؟' : 'Have a Project in Mind?'}
     </span>
 
-    <h2 className="mx-auto mt-5 max-w-3xl text-3xl leading-tight sm:text-5xl">
+    <h2 className="mx-auto mt-5 max-w-3xl text-3xl font-medium leading-tight text-primary sm:text-5xl">
       {lang === 'ar'
-        ? 'هل أعجبك هذا المشروع؟ لنحوّل فكرتك إلى موقع احترافي.'
-        : 'Like this project? Let’s turn your idea into a professional website.'}
+        ? 'لنحوّل فكرتك إلى موقع ويب احترافي يعكس هوية مشروعك ويحقق أهدافك.'
+        : "Let's build a modern website that represents your business and delivers real results."}
     </h2>
 
-    <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-black/65 sm:text-base">
+    <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-primary/60 sm:text-base">
       {lang === 'ar'
-        ? 'إذا كنت تحتاج موقعًا مخصصًا أو نظامًا رقميًا يساعد مشروعك، يسعدني العمل معك من الفكرة إلى الإطلاق.'
-        : 'Need a custom website or digital system for your business? I can help from concept to launch.'}
+        ? 'أساعدك في تنفيذ موقعك من مرحلة الفكرة والتخطيط، إلى التطوير والاختبار والإطلاق.'
+        : 'I can help you take your website from planning and development to testing and launch.'}
     </p>
 
     <HashLink
-  smooth
-  to="/#contact"
-      className="mt-8 inline-flex items-center gap-2 rounded-full bg-black px-6 py-3 text-sm font-medium text-primary transition-transform hover:-translate-y-1"
+      smooth
+      to="/#contact"
+      className="mt-10 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-black transition-all duration-300 hover:-translate-y-1 hover:bg-accent"
     >
-      {lang === 'ar' ? 'تواصل معي' : 'Contact Me'}
+      {lang === 'ar' ? 'ناقش مشروعك معي' : 'Discuss Your Project'}
 
       {lang === 'ar' ? (
         <ArrowLeft className="h-4 w-4" />

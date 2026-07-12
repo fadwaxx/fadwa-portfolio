@@ -108,17 +108,17 @@ export default function Process() {
                 </div>
 
                 <div className="mt-14">
-                  <h3 className="text-xl font-medium text-primary">
-                    {step.title}
-                  </h3>
+  <h3 className="text-xl font-medium text-primary">
+    {step.title}
+  </h3>
 
-                  <p className="mt-4 text-sm leading-7 text-primary/55">
-                    {step.description}
-                  </p>
-                </div>
+  <p className="mt-4 text-sm leading-7 text-primary/55">
+    {step.description}
+  </p>
+</div>
 
-                <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-accent transition-all duration-500 group-hover:w-full" />
-              </motion.article>
+<div className="absolute bottom-8 left-0 h-[2px] w-0 bg-accent transition-all duration-500 group-hover:w-full" />
+</motion.article>
             );
           })}
         </div>

@@ -15,7 +15,7 @@ export default function About() {
         </span>
 
         <div className="mt-6 max-w-3xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[0.95] sm:leading-[0.9]">
+        <h2 className="overflow-visible pb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.08] sm:leading-[1.05]">
             <WordsPullUpMultiStyle
               segments={[
                 { text: t.about.title1, className: 'font-normal' },
@@ -29,9 +29,9 @@ export default function About() {
       
 
         <ScrollRevealParagraph
-  className="mt-14 max-w-2xl mx-auto text-[#DEDBC8] text-sm md:text-base"
-          text={t.about.description}
-        />
+  className="mt-10 mx-auto max-w-3xl px-2 text-sm leading-8 text-[#DEDBC8] sm:text-base break-words"
+  text={t.about.description}
+/>
       </div>
     </section>
   );
