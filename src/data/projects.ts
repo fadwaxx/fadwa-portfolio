@@ -3,7 +3,7 @@ export const projects = [
       id: 1,
       slug: 'foah-alkabsah',
       status: 'completed',
-      featured: true,
+      featured: false,
   
       title: {
         ar: 'موقع فوح الكبسة',
@@ -103,82 +103,101 @@ export const projects = [
       demo: 'https://foah-alkabsah.onrender.com',
       github: '',
     },
-  
     {
       id: 2,
-      slug: 'quran-platform',
-      status: 'coming',
-      featured: false,
-  
+      slug: 'student-services',
+      status: 'completed',
+      featured: true,
+    
       title: {
-        ar: 'منصة القرآن',
-        en: 'Quran Platform',
+        ar: 'منصة الخدمات الطلابية',
+        en: 'Student Services Platform',
       },
-  
+    
       type: {
-        ar: 'منصة ويب قيد التطوير',
-        en: 'Web Platform in Development',
+        ar: 'منصة خدمات رقمية',
+        en: 'Digital Services Platform',
       },
-  
+    
       description: {
-        ar: 'منصة رقمية تهدف إلى تقديم محتوى القرآن وقصصه بطريقة حديثة ومنظمة وسهلة الاستخدام.',
-        en: 'A modern digital platform for presenting Quran-related content in an organized and accessible experience.',
+        ar: 'منصة رقمية متكاملة لتقديم الخدمات الطلابية، تتيح للمستخدمين طلب الخدمات ومتابعتها من خلال واجهة حديثة وسريعة ومتجاوبة.',
+        en: 'A modern digital platform for student services, allowing users to request and access services through a fast, responsive, and user-friendly interface.',
       },
-  
+    
       client: {
-        ar: 'مشروع شخصي',
-        en: 'Personal Project',
+        ar: 'مشروع حقيقي',
+        en: 'Real Client Project',
       },
-  
+    
       role: {
-        ar: 'تصميم وتطوير المنصة وتجربة المستخدم والنظام التقني.',
-        en: 'Platform design, development, user experience, and technical architecture.',
+        ar: 'تصميم وتطوير الموقع بالكامل، وبناء تجربة المستخدم، وتنظيم الخدمات، وربط الصفحات، وتحسين الأداء.',
+        en: 'Designed and developed the complete website, including user experience, service organization, page structure, and performance optimization.',
       },
-  
+    
       roleShort: {
         ar: 'مطورة فل ستاك',
         en: 'Full-Stack Developer',
       },
-  
+    
       duration: {
-        ar: 'قيد التطوير',
-        en: 'In Development',
+        ar: 'مشروع مكتمل',
+        en: 'Completed Project',
       },
-  
+    
       year: '2026',
-  
+    
       challenge: {
-        ar: 'تنظيم المحتوى الديني بصورة واضحة مع الحفاظ على سهولة الاستخدام ودقة عرض المعلومات.',
-        en: 'Organizing religious content clearly while maintaining usability and accurate presentation.',
+        ar: 'إنشاء منصة احترافية تعرض الخدمات بطريقة واضحة وتوفر تجربة استخدام سهلة وسريعة للعملاء.',
+        en: 'Building a professional platform that presents services clearly while providing a smooth and intuitive user experience.',
       },
-  
+    
       solution: {
-        ar: 'تطوير تجربة منظمة تعتمد على أقسام واضحة، وبحث، وتصميم متجاوب يناسب مختلف الأجهزة.',
-        en: 'Creating an organized experience with clear sections, search functionality, and responsive design.',
+        ar: 'تم تطوير موقع متجاوب بتصميم عصري، مع تنظيم الخدمات، وإضافة قسم للأسئلة الشائعة، وصفحة للتواصل، وربط جميع الصفحات بتجربة استخدام متناسقة.',
+        en: 'Developed a responsive modern website with organized services, a FAQ section, a contact page, and a consistent user experience across the platform.',
       },
-  
+    
       features: {
         ar: [
-          'تصميم متجاوب',
-          'أقسام منظمة للمحتوى',
-          'تجربة قراءة واضحة',
-          'بحث داخل المحتوى',
+          'واجهة متجاوبة',
+          'عرض الخدمات',
+          'الأسئلة الشائعة',
+          'صفحة تواصل',
+          'تصميم حديث',
+          'تجربة مستخدم احترافية',
         ],
-  
+    
         en: [
-          'Responsive design',
-          'Organized content sections',
-          'Clear reading experience',
-          'Content search',
+          'Responsive interface',
+          'Services showcase',
+          'Frequently Asked Questions',
+          'Contact page',
+          'Modern design',
+          'Professional user experience',
         ],
       },
-  
-      technologies: ['React', 'TypeScript', 'Node.js'],
-  
-      cover: "/projects/foah/cover.jpeg",
-      gallery: [],
-  
-      demo: '',
+    
+      technologies: [
+        'React',
+        'TypeScript',
+        'Vite',
+        'Tailwind CSS',
+        'Framer Motion',
+      ],
+    
+      cover: '/projects/student-services/cover.jpeg',
+    
+      video: '/projects/student-services/preview.mp4',
+    
+      gallery: [
+        '/projects/student-services/home.jpeg',
+        '/projects/student-services/services.jpeg',
+        '/projects/student-services/faq.jpg',
+        '/projects/student-services/contact.jpeg',
+      ],
+    
+      demo: 'https://services-bnan.vercel.app/',
+    
       github: '',
-    },
+    }
+   
   ];

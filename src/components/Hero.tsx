@@ -80,9 +80,9 @@ export default function Hero() {
   muted
   playsInline
   preload="auto"
-  className="absolute inset-0 h-full w-full object-cover brightness-[0.78] contrast-[1.08] saturate-[0.85]"
+  className="absolute inset-0 h-full w-full object-cover"
 >
-  <source src="/hero-bg.mp4" type="video/mp4" />
+  <source src="/nawa-team-bg.mp4" type="video/mp4" />
 </video>
 
         {/* طبقات سينمائية */}
