@@ -3,7 +3,7 @@ export const projects = [
       id: 1,
       slug: 'foah-alkabsah',
       status: 'completed',
-      featured: false,
+      featured: true,
   
       title: {
         ar: 'موقع فوح الكبسة',
@@ -107,8 +107,8 @@ export const projects = [
       id: 2,
       slug: 'student-services',
       status: 'completed',
-      featured: true,
-    
+      
+      featured: false,
       title: {
         ar: 'منصة الخدمات الطلابية',
         en: 'Student Services Platform',
